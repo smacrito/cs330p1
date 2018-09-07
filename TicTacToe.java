@@ -14,10 +14,13 @@ public class TicTacToe{
     static char nine = '9';
     public static void main(String argsp[]){
         draw();
+        playerX();
         
         }
         public static void checkWin(){
-            if(one==(two) && two==(three));
+            if(one==(two) && two==(three)){
+                System.out.println("Winner!");
+            }
         }
         public static void draw(){
             System.out.println(one + "|" + two + "|" + three + "\n" + four + "|" + five +"|" + six + "\n" + seven + "|" + eight + "|" + nine +"\n");
@@ -59,6 +62,45 @@ public class TicTacToe{
                 }
                 else if(nine==(choice) && !checkDupes.contains(choice)){
                     two ='x';
+                }
+                else{
+                    System.out.println("Invalid answer, please enter another");
+                    playerX();
+                }
+                System.out.println("Player O, enter the number that corresponds to the cell: ");
+                choice = sc.next().charAt(0);
+                checkDupes.add(choice);
+                
+                if(one==(choice) && !checkDupes.contains(choice)){
+                    one ='o';
+                }
+                else if(two==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(three==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(four==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(five==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(six==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(seven==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(eight==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else if(nine==(choice) && !checkDupes.contains(choice)){
+                    two ='o';
+                }
+                else{
+                    System.out.println("Invalid answer, please enter another");
+                    playerX();
                 }
         }
     }
