@@ -1,107 +1,171 @@
 import java.util.*;
 import java.io.*;
 public class TicTacToe{
-    static boolean checkWinner = false;
     static HashSet checkDupes = new HashSet();
-    static char one = '1';
-    static char two = '2';
-    static char three= '3';
-    static char four = '4';
-    static char five = '5';
-    static char six = '6';
-    static char seven = '7';
-    static char eight= '8';
-    static char nine = '9';
-    public static void main(String argsp[]){
-        draw();
-        playerX();
-        
+    static String one = "1";
+    static String two = "2";
+    static String three= "3";
+    static String four = "4";
+    static String five = "5";
+    static String six = "6";
+    static String seven = "7";
+    static String eight= "8";
+    static String nine = "9";
+    static int turnCount = 0;
+    static String choice = "";
+        public static void main(String argsp[]){
+            draw();
+            while(turnCount<=8){
+            playerX();
+            playerO();
         }
+    }
         public static void checkWin(){
-            if(one==(two) && two==(three)){
-                System.out.println("Winner!");
+            if(one.equals(two) && two.equals(three)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(one.equals(four) && four.equals(seven)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(one.equals(five) && five.equals(nine)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(two.equals(five) && five.equals(eight)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(three.equals(six) && six.equals(nine)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(seven.equals(five) && five.equals(three)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(four.equals(five) && four.equals(six)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(seven.equals(eight) && eight.equals(nine)){
+            System.out.println("player"+one+" Wins!");
+            System.exit(0);
+            }
+            else if(turnCount==9){
+            System.out.println("No Winner");
             }
         }
         public static void draw(){
             System.out.println(one + "|" + two + "|" + three + "\n" + four + "|" + five +"|" + six + "\n" + seven + "|" + eight + "|" + nine +"\n");
         }
         public static void playerX(){
-            int turnCount = 0;
-            char choice = '0';
-            Scanner sc = new Scanner(System.in);
-
-            while(turnCount < 9 && checkWinner == false){
-
-                System.out.println("Player X, enter the number that corresponds to the cell: ");
-                choice = sc.next().charAt(0);
-                checkDupes.add(choice);
-
-                if(one==(choice) && !checkDupes.contains(choice)){
-                    one ='x';
+        Scanner sc = new Scanner(System.in);
+        turnCount= turnCount+1;
+        System.out.println("Player X, enter the number that corresponds to the cell: ");
+        choice = sc.next();
+        if(turnCount>=5){
+        checkWin();
                 }
-                else if(two==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(three==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(four==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(five==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(six==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(seven==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(eight==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else if(nine==(choice) && !checkDupes.contains(choice)){
-                    two ='x';
-                }
-                else{
-                    System.out.println("Invalid answer, please enter another");
-                    playerX();
-                }
-                System.out.println("Player O, enter the number that corresponds to the cell: ");
-                choice = sc.next().charAt(0);
-                checkDupes.add(choice);
-                
-                if(one==(choice) && !checkDupes.contains(choice)){
-                    one ='o';
-                }
-                else if(two==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(three==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(four==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(five==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(six==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(seven==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(eight==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else if(nine==(choice) && !checkDupes.contains(choice)){
-                    two ='o';
-                }
-                else{
-                    System.out.println("Invalid answer, please enter another");
-                    playerX();
-                }
+        if(one.equals(choice) && !checkDupes.contains(choice)){
+        one ="x";
+        checkDupes.add(choice);
+        draw();
         }
+                else if(two.equals(choice) && !checkDupes.contains(choice)){
+                    two ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(three.equals(choice) && !checkDupes.contains(choice)){
+                    three ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(four.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    four ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(five.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    five ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(six.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    six ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(seven.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    seven ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(eight.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    eight ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(nine.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    nine ="x";
+                    checkDupes.add(choice);
+                    draw();
+                }
+    }
+    public static void playerO(){
+        Scanner sc = new Scanner(System.in);
+        turnCount= turnCount+1;
+        System.out.println("Player O, enter the number that corresponds to the cell: ");
+        choice = sc.next();
+        if(turnCount>=5){
+        checkWin();
+                }
+        if(one.equals(choice) && !checkDupes.contains(choice)){
+        one ="o";
+        checkDupes.add(choice);
+        draw();
+        }
+                else if(two.equals(choice) && !checkDupes.contains(choice)){
+                    two ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(three.equals(choice) && !checkDupes.contains(choice)){
+                    three ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(four.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    four ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(five.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    five ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(six.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    six ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(seven.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    seven ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(eight.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    eight ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
+                else if(nine.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                    nine ="o";
+                    checkDupes.add(choice);
+                    draw();
+                }
     }
 }
