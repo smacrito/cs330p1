@@ -13,48 +13,67 @@ public class TicTacToe{
     static String nine = "9";
     static int turnCount = 0;
     static String choice = "";
-        public static void main(String argsp[]){
+
+        public static void main(String args[]){
             draw();
             while(turnCount<=8){
-            playerX();
-            playerO();
-        }
+                playerX();
+                playerO();
+            }
     }
+        public static void clearBoard(){
+            one = "1";
+            two = "2";
+            three= "3";
+            four = "4";
+            five = "5";
+            six = "6";
+            seven = "7";
+            eight= "8";
+            nine = "9";
+        }
         public static void checkWin(){
             if(one.equals(two) && two.equals(three)){
-            System.out.println("player"+one+" Wins!");
-            System.exit(0);
+            System.out.println("player "+one+" Wins!");
+            clearBoard();
+            draw();
+            while(turnCount<=8){
+                playerX();
+                playerO();
+            }
+            //System.exit(0);
             }
             else if(one.equals(four) && four.equals(seven)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+one+" Wins!");
             System.exit(0);
             }
             else if(one.equals(five) && five.equals(nine)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+one+" Wins!");
             System.exit(0);
             }
             else if(two.equals(five) && five.equals(eight)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+two+" Wins!");
             System.exit(0);
             }
             else if(three.equals(six) && six.equals(nine)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+one+" Wins!");
             System.exit(0);
             }
             else if(seven.equals(five) && five.equals(three)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+one+" Wins!");
             System.exit(0);
             }
             else if(four.equals(five) && four.equals(six)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+four+" Wins!");
             System.exit(0);
             }
             else if(seven.equals(eight) && eight.equals(nine)){
-            System.out.println("player"+one+" Wins!");
+            System.out.println("player "+seven+" Wins!");
             System.exit(0);
             }
             else if(turnCount==9){
             System.out.println("No Winner");
+            
             }
         }
         public static void draw(){
@@ -65,7 +84,7 @@ public class TicTacToe{
         turnCount= turnCount+1;
         System.out.println("Player X, enter the number that corresponds to the cell: ");
         choice = sc.next();
-        if(turnCount>=5){
+        if(turnCount>=4){
         checkWin();
                 }
         if(one.equals(choice) && !checkDupes.contains(choice)){
