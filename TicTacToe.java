@@ -13,11 +13,12 @@ public class TicTacToe{
     static String nine = "9";
     static int turnCount = 0;
     static String choice = "";
-
+    static Scanner sc = new Scanner(System.in);
         public static void main(String args[]){
             draw();
             while(turnCount<=8){
                 playerX();
+                checkWin();
                 playerO();
             }
     }
@@ -34,53 +35,132 @@ public class TicTacToe{
         }
         public static void checkWin(){
             if(one.equals(two) && two.equals(three)){
-            System.out.println("player "+one+" Wins!");
-            clearBoard();
-            draw();
-            while(turnCount<=8){
-                playerX();
-                playerO();
-            }
-            //System.exit(0);
-            }
+                System.out.println("player "+one+" Wins!");
+                clearBoard();
+                draw();
+                /*while(turnCount<=8){
+                    playerX();
+                    playerO();
+                }*/
+                //System.exit(0);
+                }
             else if(one.equals(four) && four.equals(seven)){
-            System.out.println("player "+one+" Wins!");
-            System.exit(0);
+            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(one.equals(five) && five.equals(nine)){
-            System.out.println("player "+one+" Wins!");
-            System.exit(0);
+            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(two.equals(five) && five.equals(eight)){
-            System.out.println("player "+two+" Wins!");
-            System.exit(0);
+            System.out.println("player "+two+" Wins! Enter 1 to play again, or 0 to exit: ");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(three.equals(six) && six.equals(nine)){
-            System.out.println("player "+one+" Wins!");
-            System.exit(0);
+            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(seven.equals(five) && five.equals(three)){
-            System.out.println("player "+one+" Wins!");
-            System.exit(0);
+            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(four.equals(five) && four.equals(six)){
-            System.out.println("player "+four+" Wins!");
-            System.exit(0);
+            System.out.println("player "+four+" Wins! Enter 1 to play again, or 0 to exit: !");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
             }
+            else
+                System.exit(0);
+            }
+            
             else if(seven.equals(eight) && eight.equals(nine)){
-            System.out.println("player "+seven+" Wins!");
-            System.exit(0);
+            System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
+            choice = sc.next();
+            if(choice.equals("1")){
+                clearBoard();
+                draw();
+                while(turnCount<=8){
+                    playerX();
+                    checkWin();
+                    playerO();
+                }
+            }
+            else
+                System.exit(0);
             }
             else if(turnCount==9){
-            System.out.println("No Winner");
+            System.out.println("No Winner. Enter 1 to play again, or 0 to exit: ");
             
             }
         }
         public static void draw(){
+            //System.out.println(" " + one + " | " + two + " | " + three + "\n __|___|__" + four + "|" + five +"|" + six + "\n──┼───┼──" + seven + "|" + eight + "|" + nine +"\n");
             System.out.println(one + "|" + two + "|" + three + "\n" + four + "|" + five +"|" + six + "\n" + seven + "|" + eight + "|" + nine +"\n");
         }
         public static void playerX(){
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         turnCount= turnCount+1;
         System.out.println("Player X, enter the number that corresponds to the cell: ");
         choice = sc.next();
