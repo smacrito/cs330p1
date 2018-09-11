@@ -36,15 +36,20 @@ public class TicTacToe{
         }
         public static void checkWin(){
             if(one.equals(two) && two.equals(three)){
-                System.out.println("player "+one+" Wins!");
+                System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
+                choice = sc.next();
+                if(choice.equals("1")){
                 clearBoard();
                 draw();
-                /*while(turnCount<=8){
+                while(turnCount<=8){
                     playerX();
+                    checkWin();
                     playerO();
-                }*/
-                //System.exit(0);
                 }
+            }
+            else
+                System.exit(0);
+            }
             else if(one.equals(four) && four.equals(seven)){
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
@@ -106,7 +111,7 @@ public class TicTacToe{
                 System.exit(0);
             }
             else if(seven.equals(five) && five.equals(three)){
-            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
+            System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
             choice = sc.next();
             if(choice.equals("1")){
                 clearBoard();
@@ -156,10 +161,12 @@ public class TicTacToe{
             
             }
         }
+
         public static void draw(){
             //System.out.println(" " + one + " | " + two + " | " + three + "\n __|___|__" + four + "|" + five +"|" + six + "\n──┼───┼──" + seven + "|" + eight + "|" + nine +"\n");
             System.out.println(one + "|" + two + "|" + three + "\n" + four + "|" + five +"|" + six + "\n" + seven + "|" + eight + "|" + nine +"\n");
         }
+
         public static void playerX(){
         //Scanner sc = new Scanner(System.in);
         turnCount= turnCount+1;
@@ -183,32 +190,32 @@ public class TicTacToe{
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(four.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(four.equals(choice) && !checkDupes.contains(choice)){
                     four ="x";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(five.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(five.equals(choice) && !checkDupes.contains(choice)){
                     five ="x";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(six.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(six.equals(choice) && !checkDupes.contains(choice)){
                     six ="x";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(seven.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(seven.equals(choice) && !checkDupes.contains(choice)){
                     seven ="x";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(eight.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(eight.equals(choice) && !checkDupes.contains(choice)){
                     eight ="x";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(nine.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(nine.equals(choice) && !checkDupes.contains(choice)){
                     nine ="x";
                     checkDupes.add(choice);
                     draw();
@@ -237,32 +244,32 @@ public class TicTacToe{
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(four.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(four.equals(choice) && !checkDupes.contains(choice)){
                     four ="o";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(five.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(five.equals(choice) && !checkDupes.contains(choice)){
                     five ="o";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(six.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(six.equals(choice) && !checkDupes.contains(choice)){
                     six ="o";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(seven.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(seven.equals(choice) && !checkDupes.contains(choice)){
                     seven ="o";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(eight.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(eight.equals(choice) && !checkDupes.contains(choice)){
                     eight ="o";
                     checkDupes.add(choice);
                     draw();
                 }
-                else if(nine.equals(choice) /*&& !checkDupes.contains(choice)*/){
+                else if(nine.equals(choice) && !checkDupes.contains(choice)){
                     nine ="o";
                     checkDupes.add(choice);
                     draw();
