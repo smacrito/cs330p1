@@ -32,6 +32,7 @@ public class TicTacToe{
             seven = "7";
             eight= "8";
             nine = "9";
+            turnCount = 0;
         }
         public static void checkWin(){
             if(one.equals(two) && two.equals(three)){
