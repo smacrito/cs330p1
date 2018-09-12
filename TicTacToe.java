@@ -22,6 +22,7 @@ public class TicTacToe{
                 playerO();
             }
     }
+        public static void play(){}
         public static void clearBoard(){
             one = "1";
             two = "2";
