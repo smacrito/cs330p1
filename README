@@ -1,3 +1,12 @@
+## How to play:
+
+1)	Player X always goes first, feel free to choose who is X
+2)	Read the board that is displayed on the screen, and choose the number corresponding to the cell
+  a)	This will change the number of the cell to “X” or “O”
+3)	Player O’s turn precedes X, repeat step 2.
+4)	Play until game finds a winner or a draw
+
+### Building the program:
 1.	Build dimension of the game 3x3 (use hashset 3 rows with 3 values in each row)
 2.	Print hash set 
 3.	Player input position (keyboard input to determine location inside hashset and replace value with a char of x or o) 
