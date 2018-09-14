@@ -16,13 +16,13 @@ public class TicTacToe{
     static Scanner sc = new Scanner(System.in);
         public static void main(String args[]){
             play();
-            
-    }
+          }
     public static void play() {
     	        clearBoard();
-                draw();
                 turnCount = 0;
+                draw();
     	        while (turnCount <= 8) {
+                    
     	            playerX();
     	            checkWin();
     	            playerO();
@@ -128,7 +128,7 @@ public class TicTacToe{
 
         public static void playerX(){
         //Scanner sc = new Scanner(System.in);
-        turnCount= turnCount+1;
+        turnCount += 1;
         System.out.println("Player X, enter the number that corresponds to the cell: ");
         choice = sc.next();
         if(turnCount>=4){
@@ -137,7 +137,7 @@ public class TicTacToe{
         if(one.equals(choice) && !checkDupes.contains(choice)){
         one ="x";
         checkDupes.add(choice);
-        //draw();
+        draw();
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="x";
@@ -185,13 +185,13 @@ public class TicTacToe{
         turnCount= turnCount+1;
         System.out.println("Player O, enter the number that corresponds to the cell: ");
         choice = sc.next();
-        if(turnCount>=5){
+        if(turnCount>=4){
         checkWin();
                 }
         if(one.equals(choice) && !checkDupes.contains(choice)){
         one ="o";
         checkDupes.add(choice);
-       // draw();
+        draw();
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="o";
