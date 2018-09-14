@@ -19,7 +19,8 @@ Things to remember
 -	Once count equals 5 test method should run
 -	Once count equals 9 and test has found no answer print “DRAW” and end program
 -	When test finds a matched scenario determine if it is player 1 or 2 that wins (after print the player who wins)
--	After every turn print the layout of how the table appears 
+-	After every turn print the layout of how the table appears
+
 Appearance (what it should look like in command prompt)
 1|2|3
 4|5|6
