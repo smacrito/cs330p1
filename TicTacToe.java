@@ -15,14 +15,20 @@ public class TicTacToe{
     static String choice = "";
     static Scanner sc = new Scanner(System.in);
         public static void main(String args[]){
-            draw();
-            while(turnCount<=8){
-                playerX();
-                checkWin();
-                playerO();
-            }
+            play();
+            
     }
-        public static void play(){}
+    public static void play() {
+    	        clearBoard();
+                draw();
+                turnCount = 0;
+    	        while (turnCount <= 8) {
+    	            playerX();
+    	            checkWin();
+    	            playerO();
+    	        }
+    	    }
+        
         public static void clearBoard(){
             one = "1";
             two = "2";
@@ -40,13 +46,7 @@ public class TicTacToe{
                 System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
                 choice = sc.next();
                 if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -55,13 +55,7 @@ public class TicTacToe{
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -70,13 +64,7 @@ public class TicTacToe{
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -85,13 +73,7 @@ public class TicTacToe{
             System.out.println("player "+two+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -100,13 +82,7 @@ public class TicTacToe{
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -115,13 +91,7 @@ public class TicTacToe{
             System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -130,13 +100,7 @@ public class TicTacToe{
             System.out.println("player "+four+" Wins! Enter 1 to play again, or 0 to exit: !");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -146,13 +110,7 @@ public class TicTacToe{
             System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
             choice = sc.next();
             if(choice.equals("1")){
-                clearBoard();
-                draw();
-                while(turnCount<=8){
-                    playerX();
-                    checkWin();
-                    playerO();
-                }
+                play();
             }
             else
                 System.exit(0);
@@ -179,7 +137,7 @@ public class TicTacToe{
         if(one.equals(choice) && !checkDupes.contains(choice)){
         one ="x";
         checkDupes.add(choice);
-        draw();
+        //draw();
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="x";
@@ -233,7 +191,7 @@ public class TicTacToe{
         if(one.equals(choice) && !checkDupes.contains(choice)){
         one ="o";
         checkDupes.add(choice);
-        draw();
+       // draw();
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="o";
@@ -275,5 +233,10 @@ public class TicTacToe{
                     checkDupes.add(choice);
                     draw();
                 }
-    }
+               /* else{
+                    System.out.println("invalid input, try again: ");
+                    playerX();
+                }*/
+        }
 }
+        
