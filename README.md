@@ -30,10 +30,13 @@ Appearance (what it should look like in command prompt)
 7|8|9
 
 > Player X, pick a number that corresponds to the cell: 1
+
 (test)
 
 X|2|3
+
 4|5|6
+
 7|8|9
 
 Player O, pick a number that corresponds to the cell: 4
