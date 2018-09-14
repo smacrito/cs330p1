@@ -1,7 +1,8 @@
 import java.util.*;
 import java.io.*;
 public class TicTacToe{
-    static HashSet checkDupes = new HashSet();
+    static LinkedList checkDupes = new LinkedList();//a list to check douplicate turns
+    //each string is the place on the table that the person changes throughout the game
     static String one = "1";
     static String two = "2";
     static String three= "3";
@@ -11,25 +12,29 @@ public class TicTacToe{
     static String seven = "7";
     static String eight= "8";
     static String nine = "9";
-    static int turnCount = 0;
-    static String choice = "";
-    static Scanner sc = new Scanner(System.in);
+    static int turnCount = 0;//initial count of moves
+    static String choice = "";//initial string until chnged by the scanner
+    static Scanner sc = new Scanner(System.in); //initializes the scanner
         public static void main(String args[]){
+            //begins the loop to start the game, wont end until a player inputs the game to be ended
             play();
-          }
-    public static void play() {
-    	        clearBoard();
-                turnCount = 0;
-                draw();
-    	        while (turnCount <= 8) {
-                    
-    	            playerX();
-    	            checkWin();
-    	            playerO();
-    	        }
-    	    }
-        
+    }
+        public static void play() {
+                clearBoard();//gives the game play board a fresh start making sure thre are no present x's or o's
+                draw();// prints out the game play board for the players to see
+                turnCount = 0;//sets the turn count to 0 because no one has moved yet
+                while (turnCount <= 8) {
+                    /* This loop repeats for as long as the players havent run out of moves
+                     * yet ones the max amount of moves have been over played the game wouldnt
+                     * work because there is no room to play*/
+                    playerX();
+                    checkWin();
+                    playerO();
+                    checkWin();
+                }
+    }
         public static void clearBoard(){
+            //to make sure the game board is cleared each String is manually changed to its specific number of corrispondance 
             one = "1";
             two = "2";
             three= "3";
@@ -40,104 +45,145 @@ public class TicTacToe{
             eight= "8";
             nine = "9";
             turnCount = 0;
-        }
-        public static void checkWin(){
-            if(one.equals(two) && two.equals(three)){
-                System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
-                choice = sc.next();
+    }
+    public static void checkWin(){
+        /*In each of the 8 possible scenerios that have been coded are the only 8 ways a person can win on a 3x3
+           TicTacToe board 3 across 3 down or 2 sideways wins, this code takes all 8 scenerios and tests them
+           to be true or not and if one scenerio deems to be true, the the winning player will be announced and 
+           given an option to replay the game*/
+        if(one.equals(two) && two.equals(three)){
+            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
+            choice = sc.next();
                 if(choice.equals("1")){
+                // to replay the game press 1 and everything will be forced to reset itself back to its default corrospondance or 0
+                checkDupes.clear();
                 play();
             }
-            else
+            else{
+                //if not wanting to play again the scanner will be closed and the program will close itself so it does not run on forever
+                sc.close();
                 System.exit(0);
+            }
+            /*This process will repeat itself for every win scenerio*/
             }
             else if(one.equals(four) && four.equals(seven)){
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
-            if(choice.equals("1")){
+                if(choice.equals("1")){
+                checkDupes.clear();
                 play();
             }
-            else
+                else{
+                sc.close();
                 System.exit(0);
+            }
             }
             else if(one.equals(five) && five.equals(nine)){
-            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
+                else{
+                sc.close();
                 System.exit(0);
+            }
             }
             else if(two.equals(five) && five.equals(eight)){
-            System.out.println("player "+two+" Wins! Enter 1 to play again, or 0 to exit: ");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+two+" Wins! Enter 1 to play again, or 0 to exit: ");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
-                System.exit(0);
+                else{
+                    sc.close();
+                    System.exit(0);
+                }
             }
             else if(three.equals(six) && six.equals(nine)){
-            System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
-                System.exit(0);
+                else{
+                    sc.close();
+                    System.exit(0);
+            }
             }
             else if(seven.equals(five) && five.equals(three)){
-            System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
-                System.exit(0);
+                else{
+                    sc.close();
+                    System.exit(0);
+            }
             }
             else if(four.equals(five) && four.equals(six)){
-            System.out.println("player "+four+" Wins! Enter 1 to play again, or 0 to exit: !");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+four+" Wins! Enter 1 to play again, or 0 to exit: !");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
-                System.exit(0);
+                else{
+                    sc.close();
+                    System.exit(0);
+            }
             }
             
             else if(seven.equals(eight) && eight.equals(nine)){
-            System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
-            choice = sc.next();
-            if(choice.equals("1")){
-                play();
+                System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
+                choice = sc.next();
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
             }
-            else
-                System.exit(0);
+                else{
+                    sc.close();
+                    System.exit(0);
+            }
             }
             else if(turnCount==9){
-            System.out.println("No Winner. Enter 1 to play again, or 0 to exit: ");
-            
+            /*If the turn count has reached its max of 9(no more moves), the game will print out 
+            *there is no winner and will repeat the options of playing again or quitting the game
+            *completly*/
+                System.out.println("No Winner. Enter 1 to play again, or 0 to exit: ");
+                if(choice.equals("1")){
+                    checkDupes.clear();
+                    play();
+            }
+                else{
+                    sc.close();
+                    System.exit(0);
+            }
             }
         }
-
-        public static void draw(){
-            //System.out.println(" " + one + " | " + two + " | " + three + "\n __|___|__" + four + "|" + five +"|" + six + "\n──┼───┼──" + seven + "|" + eight + "|" + nine +"\n");
+    public static void draw(){
+            /*This draw method prints out the game board by seperating all the squares if the game board to visuall 
+            *look the same as a normal TicTacToe game should
+            *It simply prints out every string in its order by seperating them by brackets and new line spaces*/
             System.out.println(one + "|" + two + "|" + three + "\n" + four + "|" + five +"|" + six + "\n" + seven + "|" + eight + "|" + nine +"\n");
         }
-
-        public static void playerX(){
-        //Scanner sc = new Scanner(System.in);
-        turnCount += 1;
-        System.out.println("Player X, enter the number that corresponds to the cell: ");
-        choice = sc.next();
-        if(turnCount>=4){
-        checkWin();
-                }
-        if(one.equals(choice) && !checkDupes.contains(choice)){
-        one ="x";
-        checkDupes.add(choice);
-        draw();
+    public static void playerX(){
+        turnCount= turnCount+1;//for every turn player x moves, the turn count will be added plus 1
+        System.out.println("Player X, enter the number that corresponds to the cell: "); //simply tells the player what to do (instructions)
+        choice = sc.next();//opens the scanner so an option may be typed
+            if(turnCount>=4){
+                //no person can win after moving once or twice so this stops the check method from running constantly and allows it to check after 5 turns have passed by
+                checkWin();
+        }
+            if(one.equals(choice) && !checkDupes.contains(choice)){//if the persons input correctly matches the options on the game play board and is not been a moved used ny another player or by the same player already the code will continue to proceed
+                    one ="x";//the number sting will now become an s to represent player x has made a move in that position
+                    checkDupes.add(choice);//adds the string number to a list that will be the proof of somone moving in that position
+                    draw();//again draws out the game play table so the players can see the current places availible and not availible to move
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="x";
@@ -179,19 +225,25 @@ public class TicTacToe{
                     checkDupes.add(choice);
                     draw();
                 }
+                else{
+                    //if a player inputs a string that does not match the given options then it would print invalid and give them another try
+                    //there are infinite amount of trys
+                    System.out.println("invalid input, try again: ");
+                    playerX();
+                }
     }
     public static void playerO(){
-        Scanner sc = new Scanner(System.in);
+        //the same process repeats itelf for player o only thing changed is the o peing printed on the game play table instead of an x
         turnCount= turnCount+1;
         System.out.println("Player O, enter the number that corresponds to the cell: ");
         choice = sc.next();
-        if(turnCount>=4){
-        checkWin();
-                }
-        if(one.equals(choice) && !checkDupes.contains(choice)){
-        one ="o";
-        checkDupes.add(choice);
-        draw();
+            if(turnCount>=4){
+                checkWin();
+        }
+            if(one.equals(choice) && !checkDupes.contains(choice)){
+                one ="o";//the number sting will now become an s to represent player o has made a move in that position
+                checkDupes.add(choice);
+                draw();
         }
                 else if(two.equals(choice) && !checkDupes.contains(choice)){
                     two ="o";
@@ -233,10 +285,9 @@ public class TicTacToe{
                     checkDupes.add(choice);
                     draw();
                 }
-               /* else{
+               else{
                     System.out.println("invalid input, try again: ");
-                    playerX();
-                }*/
+                    playerO();
+                }
         }
 }
-        
