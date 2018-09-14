@@ -23,7 +23,9 @@ Things to remember
 
 Appearance (what it should look like in command prompt)
 1|2|3
+
 4|5|6
+
 7|8|9
 
 > Player X, pick a number that corresponds to the cell: 1
