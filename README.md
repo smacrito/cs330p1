@@ -21,7 +21,8 @@ NOTE if “hashset fails to work out as planned create 3 list and then print eac
 -	When test finds a matched scenario determine if it is player 1 or 2 that wins (after print the player who wins)
 -	After every turn print the layout of how the table appears
 
-Appearance (what it should look like in command prompt)
+> Appearance 
+(what it should look like in command prompt)
 
 1|2|3
 
