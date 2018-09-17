@@ -14,7 +14,7 @@
 5.	Test the set if the same char is found 3 times in 1 of 8 scenarios (8 sets of if else statements with a set scenario in each that would record 3 in a row) 
 NOTE if “hashset fails to work out as planned create 3 list and then print each list in order”
 
-Things to remember
+## Things to remember:
 -	Create a (count int) to count the measures of turns there are
 -	Once count equals 5 test method should run
 -	Once count equals 9 and test has found no answer print “DRAW” and end program
