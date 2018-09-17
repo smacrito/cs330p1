@@ -35,6 +35,7 @@ public class TicTacToe{
     }
         public static void clearBoard(){
             //to make sure the game board is cleared each String is manually changed to its specific number of corrispondance 
+            checkDupes.clear(); // clears the LinkedList that is used to make sure no key is entered twice in one game
             one = "1";
             two = "2";
             three= "3";
@@ -44,7 +45,7 @@ public class TicTacToe{
             seven = "7";
             eight= "8";
             nine = "9";
-            turnCount = 0;
+            turnCount = 0; // used to keep track of turns to end the game when there is no win
     }
     public static void checkWin(){
         /*In each of the 8 possible scenerios that have been coded are the only 8 ways a person can win on a 3x3
@@ -56,7 +57,6 @@ public class TicTacToe{
             choice = sc.next();
                 if(choice.equals("1")){
                 // to replay the game press 1 and everything will be forced to reset itself back to its default corrospondance or 0
-                checkDupes.clear();
                 play();
             }
             else{
@@ -70,7 +70,6 @@ public class TicTacToe{
             System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
             choice = sc.next();
                 if(choice.equals("1")){
-                checkDupes.clear();
                 play();
             }
                 else{
@@ -82,7 +81,6 @@ public class TicTacToe{
                 System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: ");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -94,7 +92,6 @@ public class TicTacToe{
                 System.out.println("player "+two+" Wins! Enter 1 to play again, or 0 to exit: ");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -106,7 +103,6 @@ public class TicTacToe{
                 System.out.println("player "+one+" Wins! Enter 1 to play again, or 0 to exit: !");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -118,7 +114,6 @@ public class TicTacToe{
                 System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -130,7 +125,6 @@ public class TicTacToe{
                 System.out.println("player "+four+" Wins! Enter 1 to play again, or 0 to exit: !");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -143,7 +137,6 @@ public class TicTacToe{
                 System.out.println("player "+seven+" Wins! Enter 1 to play again, or 0 to exit: !");
                 choice = sc.next();
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
@@ -157,7 +150,6 @@ public class TicTacToe{
             *completly*/
                 System.out.println("No Winner. Enter 1 to play again, or 0 to exit: ");
                 if(choice.equals("1")){
-                    checkDupes.clear();
                     play();
             }
                 else{
