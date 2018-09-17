@@ -40,7 +40,7 @@ X|2|3
 
 7|8|9
 
-Player O, pick a number that corresponds to the cell: 4
+> Player O, pick a number that corresponds to the cell: 4
 (test)
 
 X|2|3
