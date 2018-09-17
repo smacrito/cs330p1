@@ -6,7 +6,7 @@
 3)	Player O’s turn precedes X, repeat step 2.
 4)	Play until game finds a winner or a draw
 
-### Building the program:
+## Building the program:
 1.	Build dimension of the game 3x3 (use hashset 3 rows with 3 values in each row)
 2.	Print hash set 
 3.	Player input position (keyboard input to determine location inside hashset and replace value with a char of x or o) 
@@ -43,30 +43,38 @@ Player O, pick a number that corresponds to the cell: 4
 (test)
 
 X|2|3
+
 O|5|6
+
 7|8|9
 
-Player X, pick a number that corresponds to the cell: 2
+> Player X, pick a number that corresponds to the cell: 2
 (test)
 
 X|X|3
+
 O|5|6
+
 7|8|9
 
-Player O, pick a number that corresponds to the cell: 5
+> Player O, pick a number that corresponds to the cell: 5
 (test)
 
 X|X|3
+
 O|O|6
+
 7|8|9
 
-Player X, pick a number that corresponds to the cell: 3
+> Player X, pick a number that corresponds to the cell: 3
 (test)
 
 X|X|X
+
 O|O|6
+
 7|8|9
 
-Player 1 wins
+> Player 1 wins
 (end program)
 
